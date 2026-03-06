@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  test_ssh_server:
+    build:
+      context: ./nginx_ssh_vm
+    container_name: usecases_test_ssh_server
+    ports:
+      - "2222:22"
+    environment:
+      - USER_NAME=root
+      - USER_PASSWORD=root
+      - PASSWORD_ACCESS=true
